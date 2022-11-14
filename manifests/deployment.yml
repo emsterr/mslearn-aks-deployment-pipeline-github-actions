@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "contosovideo-437d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "contosovideo-437d"
+  template:
+    metadata:
+      labels:
+        app: "contosovideo-437d"
+    spec:
+      containers:
+        - name: "contosovideo-437d"
+          image: "contosocontainerregistry7999.azurecr.io/contosovideo"
+          ports:
+          - containerPort: 80
